@@ -13,6 +13,10 @@ LOCAL_C_INCLUDES := \
 LOCAL_STATIC_LIBRARIES := \
         libyuv_static \
 
+ifeq ($(BROADCOM_AOSP),true)
+  LOCAL_CFLAGS += -DBROADCOM_AOSP
+endif
+
 LOCAL_CFLAGS += -Werror
 LOCAL_CLANG := true
 LOCAL_SANITIZE := signed-integer-overflow
